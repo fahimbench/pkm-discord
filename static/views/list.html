@@ -1,0 +1,23 @@
+{{> fix/header}}
+<table>
+    <thead>
+        <td></td>
+        <td></td>
+    </thead>
+    <tbody>
+    {{#list}}
+        <tr>
+            <td style="width:150px;text-align: center;vertical-align: center;"><img src="images/{{pkm.img}}" height="100" width="100"></td>
+            <td style="width:150px;text-align: center;vertical-align: center;">
+                <span data-id="{{_id}}" class="name-autocomplete">{{pkm.name}}</span>
+                <input id="autocomplete" type="text" class="name-autocomplete-input" value="{{pkm.name}}" data-id="{{_id}}" placeholder="pokemon name..." autocomplete="off" hidden>
+            </td>
+            <td style="width:150px;text-align: center;vertical-align: center;">
+                <span data-id="{{_id}}" class="edit"><img data-id="{{_id}}" src="https://img.icons8.com/metro/26/000000/pencil.png"></span>
+            </td>
+<!--            <td><button class="delete-button" data-id="{{_id}}" value="{{_id}}">delete</button></td>-->
+        </tr>
+    {{/list}}
+    </tbody>
+</table>
+{{> fix/footer}}

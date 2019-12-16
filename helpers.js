@@ -7,12 +7,29 @@ function download(uri, filename){
     });
 }
 
-function getRandomInt(max) {
-    return Math.floor(Math.random() * Math.floor(max));
+function getRandomInt(min, max) {
+    return Math.random() * (max - min) + min;
 }
 
 function findPkmById(id, data) {
     return data.find(item => item.id === id);
 }
 
-module.exports = {download, getRandomInt, findPkmById};
+function makeid(length) {
+    let result           = '';
+    let characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 ';
+    let charactersLength = characters.length;
+    for ( var i = 0; i < length; i++ ) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+}
+
+function autocompletion(data, query){
+        return data.filter(function(obj){
+            let original = obj.original.toLowerCase();
+            return original.includes(query.toLowerCase());
+        })
+}
+
+module.exports = {download, getRandomInt, findPkmById, makeid, autocompletion};
