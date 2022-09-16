@@ -1,2 +1,2 @@
 # pkm-discord
-pokecord jump
+pokecord
